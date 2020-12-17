@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "email": "luthfirobbaniy@gmail.com",
+      "password": "qwe123",
+      "id": 1
+    },
+    {
+      "email": "qwe",
+      "password": "qwe123",
+      "id": 2
+    },
+    {
+      "email": "qwer",
+      "password": "qwe123",
+      "id": 3
+    },
+    {
+      "email": "asd",
+      "password": "qwe123",
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "categoryName": "All",
+      "id": 0
+    },
+    {
+      "categoryName": "A",
+      "id": 1
+    },
+    {
+      "categoryName": "B",
+      "id": 2
+    },
+    {
+      "categoryName": "C",
+      "id": 3
+    }
+  ],
+  "products": [
+    {
+      "name": "Produk 1",
+      "price": 1000,
+      "stock": 5,
+      "category": "A",
+      "image": "https://i.ibb.co/CQVQ6jn/Dummimage-1.png",
+      "id": 1
+    },
+    {
+      "name": "Produk 2",
+      "price": 2000,
+      "stock": 6,
+      "category": "B",
+      "image": "https://i.ibb.co/5FQmYcD/Dummimage-2.png",
+      "id": 2
+    },
+    {
+      "name": "Produk 3",
+      "price": 3000,
+      "stock": 7,
+      "category": "C",
+      "image": "https://i.ibb.co/gZz7nTL/Dummimage-3.png",
+      "id": 3
+    }
+  ],
+  "cart": [],
+  "transaction-history": []
+}

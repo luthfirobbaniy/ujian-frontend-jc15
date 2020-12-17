@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import {Route} from 'react-router-dom';
+import {HomePage, LoginPage, ProductDetailPage, CartPage, HistoryTransactionPage} from './pages'
+import {NavBar} from './components'
+import { connect } from 'react-redux';
+import { keepLogin } from './redux/action';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  state = {}
+
+  componentDidMount(){
+    const id = localStorage.getItem("id")
+    // const cart = localStorage.getItem("cart")
+    if(id){
+      this.props.keepLogin(id)
+      // this.props.keepCartData(cart)
+    }
+  }
+
+  render(){
+    return(
+      <div>
+        <NavBar/>
+        <Route path="/" exact component={HomePage}/>
+        <Route path="/login" component={LoginPage}/>
+        <Route path="/product-detail" component={ProductDetailPage}/>
+        <Route path="/cart" component={CartPage}/>
+        <Route path="/history" component={HistoryTransactionPage}/>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default connect(null, {keepLogin})(App);

@@ -3,10 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from 'react-router-dom';
+import {configureStore} from '@reduxjs/toolkit';
+import {Provider} from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import reducer from './redux/reducer'
+
+const conStore = configureStore({
+  devTools: true,
+  reducer
+})
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={conStore}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
